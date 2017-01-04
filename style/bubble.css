@@ -1,0 +1,78 @@
+/*绘制三角形的小气泡*/
+body {
+  margin-left: 50px;
+}
+.triangle-bubble {
+
+  margin-top: 5rem;
+
+  position: relative;
+  padding: 0.5rem;
+  width: 20rem;
+  line-height: 1;
+  text-align: center;
+  color: darkorchid;
+  /*background-color: darkorange;*/
+  /*border: 1px solid yellowgreen;*/
+  border-radius: 0.5rem;
+
+  background:-webkit-gradient(linear, left top, left bottom, from(coral), to(coral));
+  background:-moz-linear-gradient(top, coral, coral);
+  background:-o-linear-gradient(top, coral, coral);
+  background:linear-gradient(top, coral, coral);
+}
+
+/*这里利用边框画出了四个三角形，如果把其他三个颜色设置成transparent就只剩下一个三角形了*/
+.triangle {
+  width: 0;
+  height: 0;
+  border-width: 5rem;
+  border-style: solid;
+  border-color: coral crimson cyan darkorchid;
+}
+
+.triangle-bubble::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 0.5rem 0.8rem 0.5rem 0;
+  border-style: solid;
+  border-color: transparent coral transparent transparent;
+  left: -0.7rem;
+  top: 0.5rem;
+}
+
+.radius-bubble{
+  margin-top: 5rem;
+
+  position: relative;
+  padding: 0.5rem;
+  width: 20rem;
+  line-height: 1;
+  text-align: center;
+  color: darkorchid;
+  /*background-color: darkorange;*/
+  /*border: 1px solid yellowgreen;*/
+  border-radius: 0.5rem;
+
+  background:-webkit-gradient(linear, left top, left bottom, from(coral), to(coral));
+  background:-moz-linear-gradient(top, coral, coral);
+  background:-o-linear-gradient(top, coral, coral);
+  background:linear-gradient(top, coral, coral);
+}
+
+.radius-bubble::after{
+  position:absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right: -1.5rem;
+  top: 0.5rem;
+  border-width: 1rem;
+  border-style: solid;
+  border-color: transparent;
+  border-top-width: 0.5rem;
+  border-top-color: coral;
+  border-radius: 0rem 1.5rem 0rem 0rem;
+}
