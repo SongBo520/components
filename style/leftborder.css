@@ -1,0 +1,68 @@
+div {
+	position: relative;
+	width: 200px;
+	height: 60px;
+	background: #ddd;
+	margin-top: 20px;
+	text-align: center;
+}
+
+/*最简单粗暴的方式*/
+.div1 {
+	border-left: 5px solid deeppink;
+}
+
+/*使用伪类元素*/
+.div2::after {
+	content: "";
+	width: 5px;
+	height: 60px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: deeppink;
+}
+
+/*外box-shadow*/
+.div3 {
+	box-shadow: -5px 0px 0 0 deeppink;
+}
+
+/*内box-shadow*/
+.div4 {
+	box-shadow: inset 5px 0px 0 0 deeppink;
+}
+
+/*drop-shadow*/
+.div5 {
+	filter: drop-shadow(-5px 0 0 deeppink);
+}
+
+/**/
+.div6 {
+	background-image: linear-gradient(90deg, deeppink 0px, deeppink 5px, transparent 5px);  
+}
+
+/**/
+/*.div7 {
+	height: 50px;
+	outline: 5px solid deeppink;
+	position: absolute;
+	content: "";
+	top: -5px;
+	bottom: -5px;
+	right: -5px;
+	left: 0;
+	background: #ddd;
+}*/
+
+/**/
+.div8 {
+	width: 205px;
+	background: deeppink;
+	overflow-y: scroll;
+}
+.div8::-webkit-scrollbar {
+	width: 200px;
+	background-color: #ddd; 
+}
